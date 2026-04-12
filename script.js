@@ -13,10 +13,11 @@
     },{
         x:500,
         y:400,
-        duration:100,
-       
+        duration:10,
         backgroundColor:"rgba(127, 73, 158, 0.8)",
-        borderRadius:"200px 10px"
+        borderRadius:"200px 10px",
+        stagger:.10,
+        ease:"elastic.out(1,0,3)"
     })
  });
 
