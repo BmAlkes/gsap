@@ -1,24 +1,63 @@
- document.addEventListener("DOMContentLoaded", (event) => {
-  
-    // gsap.from('.quadrado',{
-    //     x:"10vw",
-    //     duration:3,
-    //     backgroundColor:"rgba(74, 125, 92, 0.8)",
-    //     borderRadius:"100px"
-    // })
-    gsap.fromTo('.quadrado',{
-        x:-200,
-        backgroundColor:"rgba(125, 91, 74, 0.8)",
-        borderRadius:"100px"
-    },{
-        x:500,
-        y:400,
-        duration:10,
-        backgroundColor:"rgba(127, 73, 158, 0.8)",
-        borderRadius:"200px 10px",
-        stagger:.10,
-        ease:"elastic.out(1,0,3)"
-    })
- });
+// timeline - gsap 
+const buttonPlay = document.querySelector('.play')
+const buttonPause = document.querySelector('.pause')
+const buttonReverse = document.querySelector('.reverse')
+const quadrados =  document.querySelectorAll('.quadrado')
+const timeline = gsap.timeline({})
 
-  
+document.addEventListener("DOMContentLoaded", (event) => {
+
+  // gsap.to(".quadrado", {
+  //   x: 200,
+  //   y: -200,
+  //   backgroundColor: "rgba(155, 60, 142, 0.8)",
+  //   borderRadius: "50px",
+  //   duration: 2,
+  // });
+  // gsap.to(".quadrado",{
+  //   y:500,
+  //   x:400,
+  //   backgroundColor:"green",
+  //   duration:2,
+  //   delay:2
+  // })
+  // gsap.to(".quadrado",{
+  //   y:500,
+  //   x:400,
+  //   rotate:100,
+  //   backgroundColor:"green",
+  //   duration:2,
+  //   delay:4
+  // })
+
+  timeline.to(quadrados[0],{
+      x: 200,
+    y: -200,
+    backgroundColor: "rgba(155, 60, 142, 0.8)",
+    borderRadius: "50px",
+    duration: 2,
+    stagger:.5
+  },">").to(".quadrado",{
+    y:500,
+    x:400,
+    rotate:100,
+    backgroundColor:"green",
+    duration:2,
+    stagger:.4
+  })
+});
+
+buttonPause.onclick=()=>{
+  timeline.pause();
+}
+buttonPlay.onclick =()=>{
+  timeline.play()
+}
+buttonReverse.onclick=()=>{
+  timeline.reverse()
+}
+
+// += comece um tempo depois
+// -=
+// < Junto com a animacao anterior
+// >
