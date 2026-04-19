@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 200vh;
+    background-color: #dedede;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.quadrado, .quadrado2{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(103, 103, 174);
+    box-shadow:10px 10px 10px #000;
+}
+.quadrado2{
+    background: #5a2929;
+}
